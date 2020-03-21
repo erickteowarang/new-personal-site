@@ -206,7 +206,6 @@ export const query = graphql`
                                 url
                             }
                         }
-                        content
                         about_title
                         about_bio
                         about_links {
