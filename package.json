@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-prismic-starter-prist",
+  "name": "new-personal-site-erick-teowarang",
   "private": true,
-  "description": "A starter powered by Gatsby and Prismic to showcase portfolios and blogs.",
+  "description": "Personal portfolio and blog site for Erick Teowarang.",
   "version": "0.1.0",
-  "author": "Marguerite Roth | marguerite.io | marguerite.roth@gmail.com",
+  "author": "Erick Teowarang | erick.teowarang@hotmail.com",
   "dependencies": {
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.12",
@@ -49,9 +49,9 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "dev": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
+    "start": "npm run dev",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },

@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Prist | Gatsby & Prismic Starter`,
-        description: `A starter powered by Gatsby and Prismic to showcase portfolios and blogs.`,
-    author: `Marguerite Roth | marguerite.io`,
+    title: `Erick Teowarang | Web Designer & Developer`,
+        description: `Showcasing the portfolio of Erick Teowarang and his thoughts.`,
+    author: `Erick Teowarang | teowarang.com.au`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -26,7 +26,7 @@ module.exports = {
     {
         resolve: 'gatsby-source-prismic-graphql',
         options: {
-            repositoryName: 'prist', // (REQUIRED, replace with your own)
+            repositoryName: 'erickteowarangsite', // (REQUIRED, replace with your own)
             linkResolver: () => post => `/${post.uid}`,
         }
     },
