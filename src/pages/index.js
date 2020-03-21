@@ -137,12 +137,14 @@ const RenderBody = ({ home, projects, meta }) => (
             <>
                 {RichText.render(home.hero_title)}
             </>
-            <a href={home.hero_button_link.url}
-               target="_blank" rel="noopener noreferrer">
-                <Button>
-                    {RichText.render(home.hero_button_text)}
-                </Button>
-            </a>
+            { home.hero_button_link && home.hero_button_text && (
+                <a href={home.hero_button_link.url}
+                    target="_blank" rel="noopener noreferrer">
+                    <Button>
+                        {RichText.render(home.hero_button_text)}
+                    </Button>
+                </a>
+            )}
         </Hero>
         <Section>
             {projects.map((project, i) => (
