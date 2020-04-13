@@ -50,9 +50,7 @@ const FooterLogo = styled("img")`
 
 const Footer = () => (
     <FooterContainer>
-        <Link to="/">
-            <Logo />
-        </Link>
+        <Logo />
         <FooterAuthor href="https://marguerite.io">
             © 2020 — Designed & developed by Erick Teowarang
         </FooterAuthor>
