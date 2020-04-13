@@ -8,6 +8,7 @@ import colors from "styles/colors";
 import dimensions from "styles/dimensions";
 import Button from "components/_ui/Button";
 import About from "components/About";
+import Brands from "components/Brands";
 import Layout from "components/Layout";
 import ProjectCard from "components/ProjectCard";
 
@@ -15,7 +16,7 @@ const Hero = styled("div")`
     padding-top: 2.5em;
     padding-bottom: 3em;
     margin-bottom: 6em;
-    max-width: 830px;
+    max-width: 880px;
 
     @media(max-width:${dimensions.maxwidthMobile}px) {
        margin-bottom: 3em;
@@ -61,6 +62,11 @@ const Section = styled("div")`
     &:last-of-type {
         margin-bottom: 0;
     }
+`
+
+export const SectionTitle = styled("h3")`
+    font-size: 1.75em;
+    margin-bottom: 1.25em;
 `
 
 const WorkAction = styled(Link)`
@@ -147,6 +153,13 @@ const RenderBody = ({ home, projects, meta }) => (
             )}
         </Hero>
         <Section>
+            <SectionTitle>Companies I've worked in</SectionTitle>
+            <Brands 
+                brandLogos={home.brands}
+            />
+        </Section>
+        <Section>
+            <SectionTitle>Latest Work</SectionTitle>
             {projects.map((project, i) => (
                 <ProjectCard
                     key={i}
@@ -162,7 +175,7 @@ const RenderBody = ({ home, projects, meta }) => (
             </WorkAction>
         </Section>
         <Section>
-            {RichText.render(home.about_title)}
+            <SectionTitle>{RichText.asText(home.about_title)}</SectionTitle>
             <About
                 bio={home.about_bio}
                 socialLinks={home.about_links}
@@ -205,6 +218,9 @@ export const query = graphql`
                                 _linkType
                                 url
                             }
+                        }
+                        brands {
+                            brand_logo
                         }
                         about_title
                         about_bio
