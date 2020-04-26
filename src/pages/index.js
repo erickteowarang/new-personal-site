@@ -160,7 +160,7 @@ const RenderBody = ({ home, projects, meta }) => (
         </Section>
         <Section>
             <SectionTitle>Latest Work</SectionTitle>
-            {projects.map((project, i) => (
+            {projects.slice(0, 1).map((project, i) => (
                 <ProjectCard
                     key={i}
                     category={project.node.project_category}
