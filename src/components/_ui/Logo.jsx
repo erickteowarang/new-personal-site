@@ -36,7 +36,7 @@ const LogoLink = styled(Link)`
         width: 100%;
         top: 50%;
         margin-top: -2px;
-        right: 0;
+        right: 2px;
         background: white;
         transform: translate3d(-100%,0,0);
         transition: transform 0.4s;

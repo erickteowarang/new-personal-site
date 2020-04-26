@@ -8,18 +8,13 @@ import PropTypes from "prop-types";
 
 const AboutContainer = styled("div")`
     padding-top: 1em;
-    display: grid;
-    grid-template-columns: 8em 1fr 8em;
-    grid-gap: 3em;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
 
     @media(max-width: ${dimensions.maxwidthTablet}px) {
-        grid-template-columns: 1fr 3fr 1fr;
-    }
-
-    @media(max-width: ${dimensions.maxwidthMobile}px) {
-        grid-template-columns: 7em 1fr;
-        grid-template-rows: 3em 1fr;
-        grid-gap: 2em;
+        flex-flow: row wrap;
+        padding-top: 0;
     }
 `
 
@@ -29,8 +24,10 @@ const AboutLinkContainer = styled("div")`
     display: flex;
     flex-direction: column;
 
-    @media(max-width: ${dimensions.maxwidthMobile}px) {
-        grid-row: 2;
+    @media(max-width: ${dimensions.maxwidthTablet}px) {
+        flex-direction: row;
+        justify-content: space-between;
+        padding-bottom: 0;
     }
 `
 
@@ -62,9 +59,8 @@ const AboutBio = styled("div")`
     padding-bottom: 3em;
     max-width: 480px;
 
-
     @media(max-width: ${dimensions.maxwidthMobile}px) {
-        grid-row: 2;
+        padding-bottom: 2.5em;
     }
 `
 
@@ -75,8 +71,6 @@ const AboutActions = styled("div")`
 
     @media(max-width: ${dimensions.maxwidthMobile}px) {
         padding: 0;
-        grid-column: 1 / -1;
-        grid-row: 1;
     }
 `
 
