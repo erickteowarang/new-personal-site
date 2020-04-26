@@ -3,6 +3,7 @@ import Button from "components/_ui/Button";
 import styled from "@emotion/styled";
 import dimensions from "styles/dimensions";
 import { RichText } from "prismic-reactjs";
+import ReactMarkdown from "react-markdown";
 import PropTypes from "prop-types";
 
 const AboutContainer = styled("div")`
@@ -79,32 +80,35 @@ const AboutActions = styled("div")`
     }
 `
 
+const About = ({ bio, socialLinks }) => {
+    const rawMarkdown = RichText.asText(bio)
 
-const About = ({ bio, socialLinks }) => (
-    <AboutContainer>
-        <AboutLinkContainer>
-            {socialLinks.map((social, i) => (
-                <AboutLink
-                    key={i}
-                    href={social.about_link[0].spans[0].data.url}
-                    target="_blank" rel="noopener noreferrer">
-                    {social.about_link[0].text}
-                    <span>&#8594;</span>
-                </AboutLink>
-            ))}
-        </AboutLinkContainer>
-        <AboutBio>
-            {RichText.render(bio)}
-        </AboutBio>
-        <AboutActions>
-            <a href="mailto:erick.teowarang@hotmail.com" target="_blank" rel="noopener noreferrer">
-                <Button className="Button--secondary">
-                    Email me
-                </Button>
-            </a>
-        </AboutActions>
-    </AboutContainer>
-)
+    return (
+        <AboutContainer>
+            <AboutLinkContainer>
+                {socialLinks.map((social, i) => (
+                    <AboutLink
+                        key={i}
+                        href={social.about_link[0].spans[0].data.url}
+                        target="_blank" rel="noopener noreferrer">
+                        {social.about_link[0].text}
+                        <span>&#8594;</span>
+                    </AboutLink>
+                ))}
+            </AboutLinkContainer>
+            <AboutBio>
+                <ReactMarkdown source={rawMarkdown} />
+            </AboutBio>
+            <AboutActions>
+                <a href="mailto:erick.teowarang@hotmail.com" target="_blank" rel="noopener noreferrer">
+                    <Button className="Button--secondary">
+                        Email me
+                    </Button>
+                </a>
+            </AboutActions>
+        </AboutContainer>
+    )
+}
 
 export default About;
 
